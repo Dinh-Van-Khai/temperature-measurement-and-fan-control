@@ -10,7 +10,7 @@
 #include "delay.h"
 
 void PWM_Init();
-void PWM_ChangeBandWidth(uint8_t band-width);
+void PWM_ChangeBandWidth(uint32_t band_width);
 
 #ifdef __cplusplus
 

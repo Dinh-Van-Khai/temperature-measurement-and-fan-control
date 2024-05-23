@@ -3,18 +3,18 @@
 #include "lcd16x2.h"
 #include "dht11.h"
 #include "delay.h"
+#include "pwm.h"
 #include <stdio.h>
 
 DHT11_TypeDef dht11_data;
 
 int main(void)
 {
-    // Delay initialization
     DelayInit();
-    // LCD initialization
     LCD_Init();
-	
 		DHT11_Init();
+		PWM_Init();
+		
 		LCD_Gotoxy(0,0);
 		LCD_Puts("starting");
     while(1)
@@ -35,6 +35,8 @@ int main(void)
 					sprintf(data,"Humd: %.1f",humidity);
 					LCD_Gotoxy(0,1);
 					LCD_Puts(data);
+					
+					PWM_ChangeBandWidth((temperature-25)/5*999);
 				}
 			DelayMs(100);
 		}
