@@ -33,4 +33,6 @@
 .\objects\main.o: ..\USER\delay.h
 .\objects\main.o: ..\USER\dht11.h
 .\objects\main.o: ..\USER\pwm.h
+.\objects\main.o: ..\USER\button.h
+.\objects\main.o: ..\USER\usbcdc.h
 .\objects\main.o: C:\Keil_v5\ARM\ARM_compiler_5.06v7\Bin\..\include\stdio.h
